@@ -26,7 +26,7 @@ type Action=
             
         const updatedItem={
             ...state.items[existingItemIndex],
-            quanity: state.items[existingItemIndex].quanity + 1,
+            quanity: state.items[existingItemIndex]?.quanity ? state.items[existingItemIndex].quanity + 1 : 1,
         };
         updatedAddItems=[...state.items];
         updatedAddItems[existingItemIndex]=updatedItem;

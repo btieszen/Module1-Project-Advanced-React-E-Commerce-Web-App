@@ -1,0 +1,36 @@
+name: React App CI/CD
+
+on:
+    push:
+        branches:
+            - main #Triggerthe workfow on pushes to the main branch
+    pull_request:
+        branches:
+            - main # Trigger on pull request targeteing the main branch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest # this specifies the OS for the build environment
+
+        steps:
+            #Step 1 Checkout the code
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            # Step 2: Set up Node.js
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: '20' # Use your desired Node.js version
+
+            # Step 3: install dependencies
+            - name: Install dependencies
+              run: npm install --legacy-peer-deps
+
+            #Step4: Run test(if you have teast set up)
+            - name: run test
+                run:npm test #Adjust this if you have specific test commands
+
+            #Step 5: bUILD React app
+            - name: Build react app
+             run:npm run build:skip-ts
