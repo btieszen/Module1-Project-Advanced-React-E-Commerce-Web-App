@@ -28,9 +28,10 @@ jobs:
               run: npm install --legacy-peer-deps
 
             #Step4: Run test(if you have teast set up)
-            - name: run test
-                run:npm test #Adjust this if you have specific test commands
+            - name: Run test
+              run: npm test #Adjust this if you have specific test commands
 
             #Step 5: bUILD React app
             - name: Build react app
-             run:npm run build:skip-ts
+              run: npm run build:skip-ts
+
