@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`]=`
+exports[`matches snapshot 1`] = `
 <DocumentFragment>
-<div>
+  <div>
     Logout
-</div>
+  </div>
 </DocumentFragment>
 `;

@@ -1,8 +1,12 @@
 import { createContext,useContext,useReducer } from 'react';
 import {Product} from '../types/types';
 
+interface CartItem extends Product {
+    quanity: number;
+}
+
 interface CartState {
-    items:Product[];
+    items:CartItem[];
 }
 
 const initialState: CartState ={
@@ -36,11 +40,11 @@ type Action=
     }
 
     sessionStorage.setItem('cart',JSON.stringify(updatedAddItems));
-    return{items: updatedAddItems };
+    return { items: updatedAddItems };
         }
         case 'REMOVE_FROM_CART':{
             const updatedRemoveItems=state.items.filter(
-                (item: CartItem)=>item.id !==action.payload
+                (item: CartItem) => item.id !== Number(action.payload)
             );
             sessionStorage.setItem('cart',JSON.stringify(updatedRemoveItems));
             return{items:updatedRemoveItems};

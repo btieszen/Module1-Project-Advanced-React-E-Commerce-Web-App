@@ -33,7 +33,7 @@ const Profile = () =>{
         }
         };
 
-    const handleDeleteAccount = async (e: React.FormEvent<HTMLFormElement>)=>{
+    const handleDeleteAccount = async (e: React.MouseEvent<HTMLButtonElement>)=>{
         e.preventDefault();
         setError('');
         setSuccess('');

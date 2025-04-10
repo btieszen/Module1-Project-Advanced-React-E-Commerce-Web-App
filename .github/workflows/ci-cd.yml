@@ -1,37 +1,59 @@
 name: React App CI/CD
 
 on:
-    push:
-        branches:
-            - main #Triggerthe workfow on pushes to the main branch
-    pull_request:
-        branches:
-            - main # Trigger on pull request targeteing the main branch
+  push:
+    branches:
+      - main #Triggerthe workfow on pushes to the main branch
+  pull_request:
+    branches:
+      - main # Trigger on pull request targeteing the main branch
 
 jobs:
-    build:
-        runs-on: ubuntu-latest # this specifies the OS for the build environment
+  build:
+    runs-on: ubuntu-latest # this specifies the OS for the build environment
 
-        steps:
+    steps:
             #Step 1 Checkout the code
-            - name: Checkout code
-              uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-            # Step 2: Set up Node.js
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
-              with:
-                node-version: '20' # Use your desired Node.js version
+      # Step 2: Set up Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20' # Use your desired Node.js version
 
             # Step 3: install dependencies
-            - name: Install dependencies
-              run: npm install --legacy-peer-deps
+    - name: Install dependencies
+      run: npm install --legacy-peer-deps
 
             #Step4: Run test(if you have teast set up)
-            - name: Run test
-              run: npm test #Adjust this if you have specific test commands
+    - name: Run test
+      run: npm test #Adjust this if you have specific test commands
 
             #Step 5: bUILD React app
-            - name: Build react app
-              run: npm run build:skip-ts
+    - name: Build React app
+      run: npm run build:skip-ts
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      #Step1 checkout code
+      - name: Checkout code
+        uses: actions/checkout@v2
 
+      #Step2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+        
+      #Step 3 : Install dependencies
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+      
+      # Step 4: Deploy to Vercel
+      - name: Deploy to Vercel
+        run:
+          npm install -g vercel
+          vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN}}
