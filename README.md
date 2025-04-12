@@ -13,6 +13,9 @@
 13.  it has a types folder to identify the components in the api
 14.  and css for styling
 
+Github folder-uses Ci/Cd to push app into githup
+has test folder to test pages for errors
+push app to Vercel to make app on the web
 
 
 
