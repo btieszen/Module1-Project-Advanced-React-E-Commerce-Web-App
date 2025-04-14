@@ -45,7 +45,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
      
         
             <button onClick={()=>addToCart(product)}> 
-              add to cart
+              Add to Cart
             </button>
              </div>
           );

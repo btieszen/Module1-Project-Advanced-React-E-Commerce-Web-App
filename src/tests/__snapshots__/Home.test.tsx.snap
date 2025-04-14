@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <select>
+      <option
+        value=""
+      >
+        All Categories
+      </option>
+    </select>
+    <div
+      class="container"
+    />
+  </div>
+</DocumentFragment>
+`;

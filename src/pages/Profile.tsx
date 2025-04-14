@@ -69,7 +69,7 @@ const Profile = () =>{
                 onChange={(e) => setemail(e.target.value)}
                 placeholder='Email'
                 />
-                <button style={styles.button} type="submit">
+                <button  style={{ backgroundColor: "blue" }}type="submit">
                     Update Profile
                 </button>
                 {success && <p style={styles.success}>{success}</p>}
@@ -77,7 +77,7 @@ const Profile = () =>{
                 <div>
                     <button
                     onClick={handleDeleteAccount}
-                    style={styles.deleteAccountButton}
+                    style={{ backgroundColor: "blue" }}
                     >
                         DeleteAccount
                     </button>

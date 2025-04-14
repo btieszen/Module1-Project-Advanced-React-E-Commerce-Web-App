@@ -1,8 +1,7 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Navbar from './components/Navbar';
-import ProductCard from "./pages/ProductCard";
+import Navbar from "./components/Navbar";
 import {ProductProvider} from "./context/ProductContext";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {CartProvider} from'./context/CartContext';
@@ -27,7 +26,7 @@ function App() {
   <Routes>
         <Route path="/" element={<Home />} />
      
-        //<Route path='productcard' element={<ProductCard />} />
+       
         <Route path="/profile" element={<Profile />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />

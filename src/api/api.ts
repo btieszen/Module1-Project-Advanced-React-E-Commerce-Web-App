@@ -1,4 +1,5 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
+import { AxiosResponse } from 'axios';
 import  { Product,Category } from '../types/types';
 
 const apiClient =axios.create({

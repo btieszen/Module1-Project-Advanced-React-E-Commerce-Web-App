@@ -18,14 +18,14 @@ const Login =() =>{
         await signInWithEmailAndPassword(auth,email,password);
         setTimeout(() =>{
         navigate('./profile');
-        },50000);
+        },1000);
     }catch (error:any){
         setError(error.message);
     }
     };
 
     return(
-        <div style={styles.form}>
+        <div >
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
     
@@ -47,10 +47,11 @@ const Login =() =>{
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit">Login</button>
+            <button type="submit" style={{ backgroundColor: "blue" }}>Login</button>
             </fieldset>
             </form>
             </div>
+ 
     );
 }
 export default Login;

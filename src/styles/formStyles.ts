@@ -5,6 +5,14 @@ form:{
     alignItems:'center',
     justifyContent:'center',
     height:'100vh',
+    button:{
+        backGroundColor:"blue",
+        color:'white',
+        border:'none',
+        padding:'10px',
+        borderRadius:'5px',
+        cursor:'pointer',
+    },
 },
 fieldset:{
     border:'1px solid #ccc',
@@ -25,6 +33,7 @@ input:{
     borderRadius:'5px',
     border:'1px solid #ccc',
     width:'100%',
+     backGroundColor:"blue",
 },
 error:{
     color:'red',

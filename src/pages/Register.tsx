@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Register =() =>{
     const[email,setEmail] = useState('');
-    const[displayName,setDisplayName] = useState('');
+    const[displayName] = useState('');
     const[password,setPassword] = useState('');
     const[error,setError] = useState('');
 
@@ -29,7 +29,7 @@ const Register =() =>{
     };
 
     return(
-        <div style={styles.form}>
+        <div >
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>
     
@@ -43,13 +43,7 @@ const Register =() =>{
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-            style={styles.input}
-            type='text'
-            placeholder ='Name'
-            value = {displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-            />
+       
             <input
             style= {styles.input}
             type='password'
@@ -57,7 +51,7 @@ const Register =() =>{
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit">Register</button>
+            <button style={{ backgroundColor: "blue" }} type="submit">Register</button>
             </fieldset>
             </form>
             </div>
