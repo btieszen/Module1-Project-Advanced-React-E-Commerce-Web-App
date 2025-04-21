@@ -21,7 +21,7 @@ const styles: { [key: string]: React.CSSProperties } = {
 };
 
 
-    const ShoppingCart=()=>{
+    const Cart=()=>{
         const{cartItems,clearCart,removeFromCart}=useCart();
 
 
@@ -33,13 +33,16 @@ const styles: { [key: string]: React.CSSProperties } = {
             <div>
                 <h1>Items in Shopping Cart:</h1>
                 <button onClick={() => { clearCart(); alert('Checkout complete'); }}>Checkout</button>
+                {cartItems.length===0  && <h3>Your cart is empty
+                    </h3>}
                 {cartItems.map((item)=>(
                     <div key={item.id} style={styles.cartItem}>
                     <h3>{item.title}</h3>
                     <img src = {item.image}alt = {item.title}style = {styles.cartItemImage}></img>
                     <p>Price:${item.price}</p>
                     <p>Quanity:{item.quanity}</p>
-                    <button onClick = {()=>removeFromCart(String(item.id))}>Remove</button>
+                    <button onClick = {()=>{removeFromCart(String(item.id))}}>Remove</button>
+              
                     </div>
                 ))}
             <div>
@@ -48,4 +51,4 @@ const styles: { [key: string]: React.CSSProperties } = {
                 </div>
         );
     };
-    export default ShoppingCart;
+    export default Cart;

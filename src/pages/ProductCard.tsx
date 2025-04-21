@@ -8,6 +8,7 @@ import {useEffect} from 'react';
 import { useCart } from '../context/CartContext';
 
 
+
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
  const {dispatch } = useProductContext();
  const { addToCart } = useCart();
@@ -44,9 +45,13 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
      
         
-            <button onClick={()=>addToCart(product)}> 
+            <button onClick={() => { 
+                addToCart(product); 
+              
+            }}> 
               Add to Cart
             </button>
+    
              </div>
           );
 };

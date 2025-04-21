@@ -1,0 +1,22 @@
+import {render,fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import Cart from '../pages/Cart';
+
+test('should interact and assert component interactions', () => {
+    const { getByText, getByRole } = render(
+        <>
+            <Cart />
+        </>
+    );
+    const buttonElement = getByRole('Remove');
+    fireEvent.click(buttonElement);
+    
+    const messageElement = getByText('Your cart is empty');
+    expect(messageElement).toBeInTheDocument();
+});
+
+
+
+
+
+
