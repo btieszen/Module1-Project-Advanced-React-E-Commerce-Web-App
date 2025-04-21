@@ -1,7 +1,7 @@
 name: Vercel Deployment
 env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID  }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_ORG_ID: ${{ secrets.team_cnak4ammfxJtw86SodaJIBnH  }}
+  VERCEL_PROJECT_ID: ${{ secrets.prj_FNTi0ewyftraOQordu4hS6AALdmM }}
 on:
   push:
     branches:
